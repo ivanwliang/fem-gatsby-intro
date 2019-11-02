@@ -4,5 +4,17 @@ module.exports = {
     description:
       'A site we built together during a Frontend Masters Gatsby workshop',
   },
-  plugins: ['gatsby-plugin-emotion', 'gatsby-plugin-react-helmet'],
+  plugins: [
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        // Will automatically load MDX files into our layout template
+        defaultLayouts: {
+          default: require.resolve('./src/components/layout.js'),
+        },
+      },
+    },
+  ],
 };
