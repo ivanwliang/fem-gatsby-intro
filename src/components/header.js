@@ -11,6 +11,10 @@ const NavLink = styled(Link)`
   margin: 0 0.5rem 0 0;
   padding: 0.25rem;
   text-decoration: none;
+
+  &.current-page {
+    border-bottom: 2px solid #222;
+  }
 `;
 
 const Header = () => (
@@ -29,8 +33,12 @@ const Header = () => (
         margin-top: 0;
       `}
     >
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/about">About</NavLink>
+      <NavLink to="/" activeClassName="current-page">
+        Home
+      </NavLink>
+      <NavLink to="/about" activeClassName="current-page">
+        About
+      </NavLink>
     </nav>
   </header>
 );
