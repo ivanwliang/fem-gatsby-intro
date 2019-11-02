@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 const NavLink = styled(Link)`
   color: #222;
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: ${props => props.fontWeight || 'normal'};
   line-height: 1;
   margin: 0 0.5rem 0 0;
   padding: 0.25rem;
@@ -14,6 +14,10 @@ const NavLink = styled(Link)`
 
   &.current-page {
     border-bottom: 2px solid #222;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
   }
 `;
 
@@ -24,10 +28,12 @@ const Header = () => (
       border-bottom: 1px solid #ddd;
       display: flex;
       justify-content: space-between;
-      padding: 0.5rem calc((100vw - 550px) / 2);
+      padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
     `}
   >
-    <NavLink to="/">FEM Workshop</NavLink>
+    <NavLink to="/" fontWeight="bold">
+      FEM Workshop
+    </NavLink>
     <nav
       css={css`
         margin-top: 0;
