@@ -22,10 +22,11 @@ const PostPreview = ({ post }) => {
         to={post.slug}
         css={css`
           margin: 1rem 1rem 0 0;
-          width: 100%;
+          width: 100px;
         `}
       >
         <Image
+          fluid={post.image.sharp.fluid}
           css={css`
             * {
               margin-top: 0;
